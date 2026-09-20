@@ -1,0 +1,260 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-manrope), 'Segoe UI', system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-manrope), system-ui, sans-serif;
+
+  /* R2M brand palette */
+  --color-teal: #0d9488;
+  --color-teal-2: #06b6d4;
+  --color-teal-soft: #d5f0eb;
+  --color-amber: #f59e0b;
+  --color-amber-soft: #fef3c7;
+  --color-ink: #122026;
+  --color-ink-2: #5a6d77;
+  --color-surface: #eef3f7;
+  --color-surface-2: #f7fafc;
+  --color-panel: #f1f5f8;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.9rem;
+
+  --background: #eef3f7;
+  --foreground: #122026;
+  --card: #f1f5f8;
+  --card-foreground: #122026;
+  --popover: #f7fafc;
+  --popover-foreground: #122026;
+  --primary: #0d9488;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef3;
+  --secondary-foreground: #122026;
+  --muted: #e8eef3;
+  --muted-foreground: #5a6d77;
+  --accent: #d5f0eb;
+  --accent-foreground: #0d5b53;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgba(18, 32, 38, 0.08);
+  --input: rgba(18, 32, 38, 0.12);
+  --ring: #0d9488;
+
+  /* neumorphic shadow anchors */
+  --shadow-dark: #c8d3dc;
+  --shadow-light: #ffffff;
+  --nav-h: 76px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: var(--nav-h);
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, #d7f1ec 0%, transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, #e0f2fe 0%, transparent 50%),
+    linear-gradient(160deg, #eef3f7, #f7fafc);
+  background-attachment: fixed;
+  color: var(--foreground);
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  /* Neumorphic soft raised surface */
+  .neu {
+    background: var(--card);
+    box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .neu-sm {
+    background: var(--card);
+    box-shadow: 5px 5px 12px var(--shadow-dark), -5px -5px 12px var(--shadow-light);
+  }
+  .neu-inset {
+    background: var(--card);
+    box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-teal), var(--color-teal-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .field-input {
+    width: 100%;
+    border-radius: 0.75rem;
+    background: var(--card);
+    box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    outline: none;
+    transition: box-shadow 0.2s ease;
+  }
+  .field-input::placeholder {
+    color: var(--color-ink-2);
+    font-weight: 500;
+    opacity: 0.7;
+  }
+  .field-input:focus {
+    box-shadow:
+      inset 3px 3px 6px var(--shadow-dark),
+      inset -3px -3px 6px var(--shadow-light),
+      0 0 0 2px var(--color-teal);
+  }
+}
+
+@layer utilities {
+  .animate-pulse-dot {
+    animation: pulse-dot 2s infinite;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-teal-soft);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(13, 148, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
+  }
+}
+
+/* ========== NEON RING (travelling cyan-to-blue light) ========== */
+@property --neon-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.neon-wrap {
+  --neon-stops:
+    #00e5ff 0%, #22d3ee 14%, #8af3ff 24%, #22d3ee 34%,
+    #0ea5e9 52%, #2563eb 72%, #3b82f6 86%, #00e5ff 100%;
+  position: relative;
+  isolation: isolate;
+  border-radius: 30px;
+  padding: 1px;
+}
+.neon-wrap > * {
+  position: relative;
+  z-index: 2;
+  border-radius: 29px;
+}
+.neon-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 33px;
+  padding: 3px;
+  background: conic-gradient(from var(--neon-angle) at 50% 50%, var(--neon-stops));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  z-index: 0;
+  pointer-events: none;
+  animation: neon-spin 7s linear infinite, ring-breath 4.6s ease-in-out infinite;
+}
+.neon-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: 46px;
+  background: conic-gradient(from var(--neon-angle) at 50% 50%, var(--neon-stops));
+  filter: blur(30px) saturate(1.5) brightness(1.15);
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
+  will-change: opacity, transform;
+  animation: neon-spin 7s linear infinite, pulse-glow 4.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+@keyframes neon-spin {
+  to {
+    --neon-angle: 360deg;
+  }
+}
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.36;
+    transform: scale(0.99);
+  }
+  40% {
+    opacity: 0.95;
+    transform: scale(1.045);
+  }
+  58% {
+    opacity: 0.86;
+    transform: scale(1.03);
+  }
+}
+@keyframes ring-breath {
+  0%, 100% {
+    filter: brightness(0.9) saturate(1.15);
+  }
+  42% {
+    filter: brightness(1.3) saturate(1.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-wrap::before,
+  .neon-wrap::after,
+  .animate-pulse-dot {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
