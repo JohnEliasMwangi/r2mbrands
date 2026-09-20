@@ -8,7 +8,11 @@ export function Container({
   children: ReactNode
   className?: string
 }) {
-  return <div className={cn('mx-auto w-full max-w-[1240px] px-6', className)}>{children}</div>
+  return (
+    <div className={cn('mx-auto w-full max-w-[1240px] px-5 sm:px-6 lg:px-8', className)}>
+      {children}
+    </div>
+  )
 }
 
 export function Eyebrow({ children }: { children: ReactNode }) {
@@ -32,7 +36,7 @@ export function SectionHead({
   className?: string
 }) {
   return (
-    <div className={cn('mx-auto mb-11 max-w-3xl text-center', className)}>
+    <div className={cn('mx-auto mb-8 max-w-3xl text-center sm:mb-11', className)}>
       {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
       <h2 className="font-display text-3xl leading-tight font-black tracking-tight text-balance sm:text-4xl md:text-[2.6rem]">
         {title}
