@@ -1,33 +1,36 @@
-# revamp
+# R2M Brands - Android Application
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+R2M Brands Ltd is a Kenyan sales execution, merchandising, and route-to-market company connecting manufacturers to retail shelves across all 47 counties.
 
-## Built with v0
+This application is built with **Kotlin** and **Jetpack Compose** following **Material 3 (M3)** design principles.
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+## Features
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_0aB8A0fu4K3FA3iiDXA0xbjbFAcn)
+- **Home Screen**: Executive summary of R2M capabilities, active metrics pills (35K+ Outlets, 47 Counties, 98% OTIF, 500+ Foot Soldiers), service highlights, and trade sectors.
+- **Services Showcase**: Detailed breakdowns of all 6 core offerings:
+  - Instore Promotions (Sampling That Converts)
+  - Merchandising (Shelf Dominance)
+  - Foot Soldiers (500+ Reps Daily)
+  - Wholesale Distribution (Bulk to Hubs, 98% OTIF)
+  - Retail Distribution (Last-Mile Delivery)
+  - Supply Chain Integration (Manufacturer to Consumer)
+  - Deliverables & SLA checklist
+- **Approach & Methodology**: Predict. Execute. Win. closed-loop methodology with an interactive 6-step workflow chain:
+  1. Route & Universe Mapping
+  2. Journey Optimization
+  3. Boots on Ground Execution
+  4. Merchandising & Sampling
+  5. OTIF Last-Mile Delivery
+  6. Sell-Out Feedback Loop
+- **Industries & Trade Categories**: Category-specific models for Food & Beverage, Personal Care, Home Care, Beverages & Spirits, Telecom & Airtime, and Agri-Inputs.
+- **Field Insights**: Operational trade intelligence articles covering route leakage prevention, share-of-shelf mathematics, national OTIF logistics, and sampling conversion metrics.
+- **Contact & Proposal Engine**: Interactive inquiry form with validation, service picker, direct phone dialer (`+254 704 051 777`), email dispatch (`info@r2mbrands.com`), and audit trail log.
+- **Adaptive Layout**: Mobile-first design with NavigationRail support on tablets and large screens.
 
-## Getting Started
+## Architecture
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+- **UI Framework**: Jetpack Compose with Material 3 Design
+- **Language**: Kotlin
+- **Build System**: Gradle (Kotlin DSL)
+- **Minimum SDK**: Android 24 (Android 7.0+)
+- **Target SDK**: Android 35

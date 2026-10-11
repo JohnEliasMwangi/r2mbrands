@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">R2M Brands</string>
+    <string name="tagline">Route-to-Market &amp; Sales Execution Across Kenya</string>
+    <string name="phone_display">+254 704 051 777</string>
+    <string name="email_display">info@r2mbrands.com</string>
+    <string name="office_display">Nairobi, Kenya</string>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <color name="teal_primary">#0D9488</color>
+    <color name="cyan_secondary">#06B6D4</color>
+    <color name="teal_soft">#D5F0EB</color>
+    <color name="amber_accent">#F59E0B</color>
+    <color name="amber_soft">#FEF3C7</color>
+    <color name="ink_text">#122026</color>
+    <color name="ink_muted">#5A6D77</color>
+    <color name="surface_bg">#EEF3F7</color>
+    <color name="card_bg">#F1F5F8</color>
+    <color name="white">#FFFFFF</color>
+</resources>
